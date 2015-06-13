@@ -6,7 +6,7 @@ Tested up to: 4.2
 Stable tag: 1.0.0
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-EDD requires at least: 2.3.0
+EDD requires at least: 2.3.9
 EDD tested up to: 2.3.9
 
 Tagline here
