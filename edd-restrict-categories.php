@@ -182,11 +182,11 @@ class EDD_Restrict_Categories {
 
 		// Scripts
 		wp_register_script( 'eddrc-select2', EDD_RESTRICT_CATEGORIES_URL . 'ui/js/select2.full.min.js', array( 'jquery' ), '4.0.0' );
-		wp_enqueue_script( 'eddrc-admin', EDD_RESTRICT_CATEGORIES_URL . 'ui/js/admin.js', array( 'jquery', 'eddrc-select2' ), self::VERSION );
+		wp_enqueue_script( 'eddrc-admin', EDD_RESTRICT_CATEGORIES_URL . 'ui/js/admin.min.js', array( 'jquery', 'eddrc-select2' ), self::VERSION );
 
 		// Styles
 		wp_register_style( 'eddrc-select2', EDD_RESTRICT_CATEGORIES_URL . 'ui/css/select2.min.css', array(), '4.0.0' );
-		wp_enqueue_style( 'eddrc-admin', EDD_RESTRICT_CATEGORIES_URL . 'ui/css/admin.css', array( 'eddrc-select2' ), self::VERSION );
+		wp_enqueue_style( 'eddrc-admin', EDD_RESTRICT_CATEGORIES_URL . 'ui/css/admin.min.css', array( 'eddrc-select2' ), self::VERSION );
 	}
 
 	/**
