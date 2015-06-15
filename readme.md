@@ -14,12 +14,14 @@ Password protect your digital download category archives, and the products insid
 
 ## Description ##
 
-Take total control over who can access your digital download category archives.
+Take full control over who can access your digital download category archives!
 
- * Users are prompted for a password when attemping to access a restricted category
- * Products belonging to restricted categories are automatically password protected
- * Whitelist roles and/or users who should always have access without requiring a password
- * Works out of the box for Download Tag archives too!
+ * Feature certain products for VIP customers only
+ * Great for membership sites with downloadable products
+ * Prompts users for a password when they attempt to access a restricted category
+ * Products belonging to restricted categories are automatically password protected too
+ * Whitelist roles and users who should always have access without requiring a password
+ * Works out of the box for **Download Tag** archives too!
 
 ## Frequently Asked Questions ##
 
