@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: EDD Restrict Categories
- * Plugin URI: https://easydigitaldownloads.com/downloads/edd-restrict-categories/
+ * Plugin URI: https://easydigitaldownloads.com/downloads/restrict-categories/
  * Description:
  * Version: 1.0.0
  * Author: Easy Digital Downloads
