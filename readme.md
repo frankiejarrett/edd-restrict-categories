@@ -23,12 +23,12 @@ Yes. By default, products that belong to restricted categories are also restrict
 
 However, this behavior can be overridden using the `eddrc_restrict_post` filter by adding this hook as an [MU plugin](https://codex.wordpress.org/Must_Use_Plugins) or to your theme's `functions.php` file:
 
-<pre>
+```php
 function my_custom_eddrc_restrict_post( $restrict_post, $post_id, $taxonomy, $term_id ) {
 	return false; // URLs to all products belonging to restricted categories can be accessed directly
 }
 add_filter( 'eddrc_restrict_post', 'my_custom_eddrc_restrict_post', 10, 4 );
-</pre>
+```
 
 Optionally, you can also use the `$post_id`, `$taxonomy` and/or `$term_id` parameters for more granular control over which products should be restricted.
 
@@ -42,12 +42,12 @@ Yes. By default, the `download_category` and `download_tags` taxonomies will bot
 
 However, you can add/remove supported taxonomies as you wish using the `eddrc_taxonomies` filter by adding this hook as an [MU plugin](https://codex.wordpress.org/Must_Use_Plugins) or to your theme's `functions.php` file:
 
-<pre>
+```php
 function my_custom_eddrc_taxonomies() {
 	return array( 'download_category', 'download_tag', 'my_custom_taxonomy' );
 }
 add_filter( 'eddrc_taxonomies', 'my_custom_eddrc_taxonomies' );
-</pre>
+```
 
 ### How long will access be granted to a restricted category? ###
 After a user enters the password for a restricted category they will be granted access for **1 hour** via a session cookie.
@@ -58,12 +58,12 @@ The only exception is that if you _change_ the password, access for any existing
 
 The default cookie TTL (time to live) can be customized easily using the `eddrc_auth_cookie_ttl` filter by adding this hook as an [MU plugin](https://codex.wordpress.org/Must_Use_Plugins) or to your theme's `functions.php` file:
 
-<pre>
+```php
 function my_custom_eddrc_auth_cookie_ttl( $ttl, $taxonomy, $term_id ) {
 	return DAY_IN_SECONDS; // Time in seconds
 }
 add_filter( 'eddrc_auth_cookie_ttl', 'my_custom_eddrc_auth_cookie_ttl', 10, 3 );
-</pre>
+```
 
 Optionally, you can also use the `$taxonomy` and/or `$term_id` parameters to set a taxonomy-specific or term-specific TTL (time to live).
 

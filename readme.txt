@@ -23,7 +23,7 @@ Yes. By default, products that belong to restricted categories are also restrict
 
 However, this behavior can be overridden using the `eddrc_restrict_post` filter by adding this hook as an [MU plugin](https://codex.wordpress.org/Must_Use_Plugins) or to your theme's `functions.php` file:
 
-<pre>
+<pre lang="php">
 function my_custom_eddrc_restrict_post( $restrict_post, $post_id, $taxonomy, $term_id ) {
 	return false; // URLs to all products belonging to restricted categories can be accessed directly
 }
@@ -44,7 +44,7 @@ Yes. By default, the `download_category` and `download_tags` taxonomies will bot
 
 However, you can add/remove supported taxonomies as you wish using the `eddrc_taxonomies` filter by adding this hook as an [MU plugin](https://codex.wordpress.org/Must_Use_Plugins) or to your theme's `functions.php` file:
 
-<pre>
+<pre lang="php">
 function my_custom_eddrc_taxonomies() {
 	return array( 'download_category', 'download_tag', 'my_custom_taxonomy' );
 }
@@ -61,7 +61,7 @@ The only exception is that if you _change_ the password, access for any existing
 
 The default cookie TTL (time to live) can be customized easily using the `eddrc_auth_cookie_ttl` filter by adding this hook as an [MU plugin](https://codex.wordpress.org/Must_Use_Plugins) or to your theme's `functions.php` file:
 
-<pre>
+<pre lang="php">
 function my_custom_eddrc_auth_cookie_ttl( $ttl, $taxonomy, $term_id ) {
 	return DAY_IN_SECONDS; // Time in seconds
 }
