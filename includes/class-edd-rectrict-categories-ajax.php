@@ -112,7 +112,6 @@ class EDD_Restrict_Categories_Ajax {
 			'name'    => $user->display_name,
 			'role'    => ! empty( $roles[ $user->roles[0] ] ) ? $roles[ $user->roles[0] ] : __( 'N/A', 'edd-restrict-categories' ),
 			'email'   => $user->user_email,
-			'orders'  => absint( get_user_meta( $user->ID, '_order_count', true ) ),
 		);
 
 		echo json_encode( $data );

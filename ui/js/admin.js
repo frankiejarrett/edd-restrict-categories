@@ -100,7 +100,6 @@ jQuery( document ).ready( function( $ ) {
 				$( 'td.eddrc-name-column span', $newRow ).html( response.avatar + ' ' + response.name );
 				$( 'td.eddrc-role-column', $newRow ).text( response.role );
 				$( 'td.eddrc-email-column', $newRow ).text( response.email );
-				$( 'td.eddrc-orders-column', $newRow ).text( response.orders );
 
 				$helper.after( $newRow );
 

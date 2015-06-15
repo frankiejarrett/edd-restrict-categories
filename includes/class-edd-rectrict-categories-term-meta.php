@@ -116,7 +116,6 @@ class EDD_Restrict_Categories_Term_Meta {
 							<th scope="col" class="manage-column eddrc-name-manage-column"><?php _e( 'User', 'edd-restrict-categories' ) ?></th>
 							<th scope="col" class="manage-column eddrc-role-manage-column"><?php _e( 'Role', 'edd-restrict-categories' ) ?></th>
 							<th scope="col" class="manage-column eddrc-email-manage-column"><?php _e( 'E-mail', 'edd-restrict-categories' ) ?></th>
-							<th scope="col" class="manage-column eddrc-orders-manage-column"><?php _e( 'Orders', 'edd-restrict-categories' ) ?></th>
 						</tr>
 					</thead>
 					<tfoot>
@@ -125,12 +124,11 @@ class EDD_Restrict_Categories_Term_Meta {
 							<th scope="col" class="manage-column eddrc-name-manage-column"><?php _e( 'User', 'edd-restrict-categories' ) ?></th>
 							<th scope="col" class="manage-column eddrc-role-manage-column"><?php _e( 'Role', 'edd-restrict-categories' ) ?></th>
 							<th scope="col" class="manage-column eddrc-email-manage-column"><?php _e( 'E-mail', 'edd-restrict-categories' ) ?></th>
-							<th scope="col" class="manage-column eddrc-orders-manage-column"><?php _e( 'Orders', 'edd-restrict-categories' ) ?></th>
 						</tr>
 					</tfoot>
 					<tbody>
 						<tr class="eddrc-no-items hidden">
-							<td class="colspanchange" colspan="5">
+							<td class="colspanchange" colspan="4">
 								<?php _e( 'No users have been whitelisted.', 'edd-restrict-categories' ) ?></a>
 							</td>
 						</tr>
@@ -142,7 +140,6 @@ class EDD_Restrict_Categories_Term_Meta {
 							<td class="eddrc-name-column"><span></span></td>
 							<td class="eddrc-role-column"></td>
 							<td class="eddrc-email-column"></td>
-							<td class="eddrc-orders-column"></td>
 						</tr>
 						<?php foreach ( $users as $user_id ) : ?>
 							<?php
@@ -152,19 +149,11 @@ class EDD_Restrict_Categories_Term_Meta {
 								continue;
 							}
 
-							$roles       = EDD_Restrict_Categories::get_role_labels();
-							$role        = ! empty( $roles[ $user->roles[0] ] ) ? $roles[ $user->roles[0] ] : null;
-							$email       = ! empty( $user->user_email ) ? $user->user_email : null;
-							$orders      = get_user_meta( $user->ID, '_order_count', true );
-							$orders_url  = add_query_arg(
-								array(
-									'post_type'      => 'shop_order',
-									'_customer_user' => $user->ID,
-								),
-								admin_url( 'edit.php' )
-							);
-							$taxonomy    = ! empty( $_GET['taxonomy'] ) ? sanitize_key( $_GET['taxonomy'] ) : null;
-							$term_id     = ! empty( $_GET['tag_ID'] ) ? absint( $_GET['tag_ID'] ) : null;
+							$roles    = EDD_Restrict_Categories::get_role_labels();
+							$role     = ! empty( $roles[ $user->roles[0] ] ) ? $roles[ $user->roles[0] ] : null;
+							$email    = ! empty( $user->user_email ) ? $user->user_email : null;
+							$taxonomy = ! empty( $_GET['taxonomy'] ) ? sanitize_key( $_GET['taxonomy'] ) : null;
+							$term_id  = ! empty( $_GET['tag_ID'] ) ? absint( $_GET['tag_ID'] ) : null;
 							?>
 							<tr>
 								<th scope="row" class="check-column">
@@ -174,7 +163,6 @@ class EDD_Restrict_Categories_Term_Meta {
 								<td class="eddrc-name-column"><a href="<?php echo get_edit_user_link( $user->ID ) ?>"><span><?php echo get_avatar( $user->ID, 24 ) ?> <?php echo esc_html( $user->display_name ) ?></span></a></td>
 								<td class="eddrc-role-column"><?php echo esc_html( $role ) ?></td>
 								<td class="eddrc-email-column"><?php echo esc_html( $email ) ?></td>
-								<td class="eddrc-orders-column"><a href="<?php echo esc_url( $orders_url ) ?>"><?php echo absint( $orders ) ?></a></td>
 							</tr>
 						<?php endforeach; ?>
 					</tbody>
