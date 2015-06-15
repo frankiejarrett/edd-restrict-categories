@@ -64,6 +64,8 @@ class EDD_Restrict_Categories_Ajax {
 		 *
 		 * @since 1.0.0
 		 *
+		 * @param int $max_users
+		 *
 		 * @return int
 		 */
 		$max_users = absint( apply_filters( 'eddrc_ajax_search_users_max', 50 ) );

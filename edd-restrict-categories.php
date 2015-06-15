@@ -102,6 +102,8 @@ class EDD_Restrict_Categories {
 		 *
 		 * @since 1.0.0
 		 *
+		 * @param array $taxonomies
+		 *
 		 * @return array
 		 */
 		self::$taxonomies = (array) apply_filters( 'eddrc_taxonomies', array( 'download_category', 'download_tag' ) );
@@ -110,6 +112,8 @@ class EDD_Restrict_Categories {
 		 * Register the post types where taxonomy restrictions should be honored
 		 *
 		 * @since 1.0.0
+		 *
+		 * @param array $post_types
 		 *
 		 * @return array
 		 */

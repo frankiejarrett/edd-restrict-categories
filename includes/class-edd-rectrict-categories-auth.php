@@ -177,6 +177,7 @@ class EDD_Restrict_Categories_Auth {
 				 *
 				 * @since 1.0.0
 				 *
+				 * @param bool   $restrict_post
 				 * @param int    $post_id
 				 * @param string $taxonomy
 				 * @param int    $term_id
@@ -242,6 +243,7 @@ class EDD_Restrict_Categories_Auth {
 				 *
 				 * @since 1.0.0
 				 *
+				 * @param bool     $hide_posts
 				 * @param WP_Query $query
 				 * @param string   $taxonomy
 				 * @param int      $term_id
@@ -291,7 +293,11 @@ class EDD_Restrict_Categories_Auth {
 	 * @return array|bool
 	 */
 	public function maybe_restrict_cart_contents( $cart ) {
-		foreach ( $cart as $key => $item ) {
+		if ( empty( $cart ) ) {
+			return $cart;
+		}
+
+		foreach ( (array) $cart as $key => $item ) {
 			if ( $restricted = self::get_post_restricted_terms( $item['id'] ) ) {
 				foreach ( $restricted as $taxonomy => $terms ) {
 					foreach ( $terms as $term_id ) {
@@ -366,6 +372,7 @@ class EDD_Restrict_Categories_Auth {
 		 *
 		 * @since 1.0.0
 		 *
+		 * @param int    $ttl
 		 * @param string $taxonomy
 		 * @param int    $term_id
 		 *

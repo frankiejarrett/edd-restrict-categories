@@ -47,6 +47,7 @@ class EDD_Restrict_Categories_Term_Meta {
 		 *
 		 * @since 1.0.0
 		 *
+		 * @param int    $min_length
 		 * @param string $taxonomy
 		 * @param object $term
 		 *
