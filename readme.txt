@@ -9,11 +9,16 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 EDD requires at least: 2.3.9
 EDD tested up to: 2.3.9
 
-Password protect your digital download category archives and the products inside them.
+Password protect your digital download category archives, and the products inside them.
 
 == Description ==
 
-TODO
+Take total control over who can access your digital download category archives.
+
+ * Users are prompted for a password when attemping to access a restricted category
+ * Products belonging to restricted categories are automatically password protected
+ * Whitelist roles and/or users who should always have access without requiring a password
+ * Works out of the box for Download Tag archives too!
 
 == Frequently Asked Questions ==
 
@@ -68,7 +73,7 @@ function my_custom_eddrc_auth_cookie_ttl( $ttl, $taxonomy, $term_id ) {
 add_filter( 'eddrc_auth_cookie_ttl', 'my_custom_eddrc_auth_cookie_ttl', 10, 3 );
 </pre>
 
-Optionally, you can also use the `$taxonomy` and/or `$term_id` parameters to set a taxonomy-specific or term-specific TTL (time to live).
+Optionally, you can also use the `$taxonomy` and/or `$term_id` parameters to set a taxonomy-specific or term-specific TTL.
 
 See also [Easier Expression of Time Constants](https://codex.wordpress.org/Easier_Expression_of_Time_Constants) in the Codex.
 
