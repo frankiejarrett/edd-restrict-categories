@@ -8,7 +8,7 @@
  * Author URI: http://easydigitaldownloads.com/
  * Developer: Frankie Jarrett
  * Developer URI: http://frankiejarrett.com/
- * Depends: Easy Digital Downlods
+ * Depends: Easy Digital Downloads
  * Text Domain: edd-restrict-categories
  * Domain Path: /languages
  *
