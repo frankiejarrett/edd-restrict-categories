@@ -353,9 +353,28 @@ class EDD_Restrict_Categories_Auth {
 			</form>
 		</div>
 		<?php
-		$message = ob_get_clean();
+		$html = ob_get_clean();
 
-		wp_die( $message, sprintf( __( 'This is a Restricted %s', 'edd-restrict-categories' ), esc_html( $tax_label ) ) );
+		/**
+		 * Fires before the password notice is thrown
+		 *
+		 * Here you can customize the password notice, perhaps
+		 * by redirecting to some custom template or page you
+		 * have built rather than using the default wp_die()
+		 * screen used by this plugin. Or to redirect somewhere
+		 * else when the user enters an incorrect password
+		 * rather than staying on the password notice screen.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @param string $taxonomy
+		 * @param int    $term_id
+		 * @param string $self_url
+		 * @param bool   $incorrect
+		 */
+		do_action( 'eddrc_password_notice', $taxonomy, $term_id, $self_url, $incorrect );
+
+		wp_die( $html, sprintf( __( 'This is a Restricted %s', 'edd-restrict-categories' ), esc_html( $tax_label ) ) );
 	}
 
 	/**
@@ -496,8 +515,8 @@ class EDD_Restrict_Categories_Auth {
 			 *
 			 * @since 1.0.0
 			 *
-			 * @param string  $taxonomy
-			 * @param int     $term_id
+			 * @param string $taxonomy
+			 * @param int    $term_id
 			 */
 			do_action( 'eddrc_access_granted', $taxonomy, $term_id );
 
@@ -509,8 +528,8 @@ class EDD_Restrict_Categories_Auth {
 		 *
 		 * @since 1.0.0
 		 *
-		 * @param string  $taxonomy
-		 * @param int     $term_id
+		 * @param string $taxonomy
+		 * @param int    $term_id
 		 */
 		do_action( 'eddrc_access_denied', $taxonomy, $term_id );
 
