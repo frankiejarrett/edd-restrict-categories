@@ -68,11 +68,13 @@ class EDD_Restrict_Categories_Auth {
 			/**
 			 * Fires after a user has successfully entered the correct password
 			 *
+			 * @since 1.0.0
+			 *
 			 * @param string $taxonomy
 			 * @param int    $term_id
 			 * @param string $pass
 			 */
-			do_action( 'eddrc_password_success', $taxonomy, $term_id, $pass );
+			do_action( 'eddrc_password_correct', $taxonomy, $term_id, $pass );
 
 			self::set_cookie( $term_id, $taxonomy, $pass );
 
@@ -83,6 +85,8 @@ class EDD_Restrict_Categories_Auth {
 
 		/**
 		 * Fires after a user has entered an incorrect password
+		 *
+		 * @since 1.0.0
 		 *
 		 * @param string $taxonomy
 		 * @param int    $term_id
@@ -491,6 +495,8 @@ class EDD_Restrict_Categories_Auth {
 			/**
 			 * Fires after a visitor has been granted automatic access
 			 *
+			 * @since 1.0.0
+			 *
 			 * @param string  $taxonomy
 			 * @param int     $term_id
 			 */
@@ -501,6 +507,8 @@ class EDD_Restrict_Categories_Auth {
 
 		/**
 		 * Fires after a visitor has been denied access
+		 *
+		 * @since 1.0.0
 		 *
 		 * @param string  $taxonomy
 		 * @param int     $term_id
