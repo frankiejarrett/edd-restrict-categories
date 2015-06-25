@@ -2,7 +2,7 @@
 /**
  * Plugin Name: EDD Restrict Categories
  * Plugin URI: https://easydigitaldownloads.com/downloads/restrict-categories/
- * Description:
+ * Description: Password protect your digital download category archives, and the products inside them.
  * Version: 1.0.0
  * Author: Easy Digital Downloads
  * Author URI: http://easydigitaldownloads.com/
@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Main Plugin Class
  *
- *
+ * Password protect your digital download category archives, and the products inside them.
  *
  * @version 1.0.0
  * @package Easy Digital Downloads
