@@ -364,6 +364,10 @@ class EDD_Restrict_Categories_Auth {
 		 * somewhere else when the user enters an incorrect password
 		 * rather than staying on the password notice screen.
 		 *
+		 * However, keep in mind that any customizations you do still
+		 * need to include the appropriate form nonce and hidden inputs
+		 * as used in the default notice HTML.
+		 *
 		 * @since 1.0.0
 		 *
 		 * @param string $taxonomy
