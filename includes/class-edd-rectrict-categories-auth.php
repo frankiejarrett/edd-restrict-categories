@@ -358,11 +358,10 @@ class EDD_Restrict_Categories_Auth {
 		/**
 		 * Fires before the password notice is thrown
 		 *
-		 * Here you can customize the password notice, perhaps
-		 * by redirecting to some custom template or page you
-		 * have built rather than using the default wp_die()
-		 * screen used by this plugin. Or to redirect somewhere
-		 * else when the user enters an incorrect password
+		 * Here you can customize the password notice, perhaps by
+		 * redirecting to some custom template or page you have built
+		 * rather than using the default wp_die() screen. Or to redirect
+		 * somewhere else when the user enters an incorrect password
 		 * rather than staying on the password notice screen.
 		 *
 		 * @since 1.0.0
