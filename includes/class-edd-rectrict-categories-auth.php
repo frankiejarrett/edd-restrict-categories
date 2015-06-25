@@ -160,14 +160,14 @@ class EDD_Restrict_Categories_Auth {
 			return;
 		}
 
-		$post_id = get_queried_object_id();
-		$r_terms = self::get_post_restricted_terms( $post_id );
+		$post_id          = get_queried_object_id();
+		$restricted_terms = self::get_post_restricted_terms( $post_id );
 
-		if ( empty( $r_terms ) ) {
+		if ( empty( $restricted_terms ) ) {
 			return;
 		}
 
-		foreach ( $r_terms as $taxonomy => $terms ) {
+		foreach ( $restricted_terms as $taxonomy => $terms ) {
 			foreach ( $terms as $key => $term_id ) {
 				/**
 				 * Filter if/when posts in restricted taxonomies should be restricted
@@ -190,20 +190,20 @@ class EDD_Restrict_Categories_Auth {
 				$restrict_post = (bool) apply_filters( 'eddrc_restrict_post', true, $post_id, $taxonomy, $term_id );
 
 				if ( false === $restrict_post ) {
-					unset( $r_terms[ $taxonomy ][ $key ] );
+					unset( $restricted_terms[ $taxonomy ][ $key ] );
 				}
 			}
 
-			if ( empty( $r_terms[ $taxonomy ] ) ) {
-				unset( $r_terms[ $taxonomy ] );
+			if ( empty( $restricted_terms[ $taxonomy ] ) ) {
+				unset( $restricted_terms[ $taxonomy ] );
 			}
 		}
 
-		if ( empty( $r_terms ) ) {
+		if ( empty( $restricted_terms ) ) {
 			return;
 		}
 
-		$terms   = array_shift( $r_terms );
+		$terms   = array_shift( $restricted_terms );
 		$term_id = array_shift( $terms );
 
 		self::password_notice( $term_id, $taxonomy );
@@ -548,9 +548,9 @@ class EDD_Restrict_Categories_Auth {
 				continue;
 			}
 
-			$terms   = wp_list_pluck( $terms, 'term_id' );
-			$r_terms = (array) get_option( EDD_Restrict_Categories::PREFIX . $taxonomy );
-			$matches = array_intersect( $terms, $r_terms );
+			$terms            = wp_list_pluck( $terms, 'term_id' );
+			$restricted_terms = (array) get_option( EDD_Restrict_Categories::PREFIX . $taxonomy );
+			$matches          = array_intersect( $terms, $restricted_terms );
 
 			sort( $matches );
 
