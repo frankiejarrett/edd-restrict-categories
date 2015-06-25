@@ -72,9 +72,8 @@ class EDD_Restrict_Categories_Auth {
 			 *
 			 * @param string $taxonomy
 			 * @param int    $term_id
-			 * @param string $pass
 			 */
-			do_action( 'eddrc_password_correct', $taxonomy, $term_id, $pass );
+			do_action( 'eddrc_password_correct', $taxonomy, $term_id );
 
 			self::set_cookie( $term_id, $taxonomy, $pass );
 
