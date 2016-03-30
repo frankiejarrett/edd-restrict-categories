@@ -4,10 +4,8 @@
  * Plugin URI: https://easydigitaldownloads.com/downloads/restrict-categories/
  * Description: Password protect your digital download category archives, and the products inside them.
  * Version: 1.0.0
- * Author: Easy Digital Downloads
- * Author URI: http://easydigitaldownloads.com/
- * Developer: Frankie Jarrett
- * Developer URI: http://frankiejarrett.com/
+ * Author: Frankie Jarrett
+ * Author URI: http://frankiejarrett.com
  * Depends: Easy Digital Downloads
  * Text Domain: edd-restrict-categories
  * Domain Path: /languages
